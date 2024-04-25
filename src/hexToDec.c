@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include "./hexToDec.h"
-#include "./stringUtil.h"
+#include "./util.h"
 #include "./math.h"
 
 static inline unsigned short hexCharToNum(char c) {
@@ -8,7 +8,7 @@ static inline unsigned short hexCharToNum(char c) {
 }
 
 unsigned long hexToDec(const char* hex) {
-    size_t len = stringUtil_strlen(hex);
+    size_t len = util_strlen(hex);
     unsigned short* nums = (unsigned short*) malloc(len * sizeof(unsigned short));
 
     for (size_t i = 0; i < len; i++) {

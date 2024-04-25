@@ -7,7 +7,7 @@ add_executable(${PROJECT_NAME} src/main.c
         src/math.h
         src/hexToDec.h
         src/hexToDec.c
-        src/stringUtil.h
+        src/util.h
         src/romanNumParser.c
         src/romanNumParser.h
         src/binarySearch.h

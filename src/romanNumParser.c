@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include "./stringUtil.h"
+#include "./util.h"
 
 static unsigned long romanNumParser_romanNumToNum(char n) {
     switch (n) {
@@ -19,7 +19,7 @@ static unsigned long romanNumParser_romanNumToNum(char n) {
 }
 
 unsigned long romanNumParser_parse(const char* romanNum) {
-    const size_t rnSz = stringUtil_strlen(romanNum);
+    const size_t rnSz = util_strlen(romanNum);
     unsigned long* allNums = (unsigned long*)malloc(rnSz * sizeof(long));
 
     for (size_t i = 0; i < rnSz; i++) {
