@@ -1,5 +1,5 @@
-#ifndef QUICKSORT_H
-#define QUICKSORT_H
+#ifndef CEXERCISES_QUICKSORT_H
+#define CEXERCISES_QUICKSORT_H
 
 
 void quicksort(int *target, int left, int right) {
@@ -18,4 +18,4 @@ void quicksort(int *target, int left, int right) {
 }
 
 
-#endif // QUICKSORT_H
+#endif //CEXERCISES_QUICKSORT_H

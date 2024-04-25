@@ -1,5 +1,5 @@
-#ifndef BINARY_SEARCH_H
-#define BINARY_SEARCH_H
+#ifndef CEXERCISES_BINARY_SEARCH_H
+#define CEXERCISES_BINARY_SEARCH_H
 
 
 int mid, val;
@@ -16,4 +16,4 @@ int binarySearch(int *arr, int l, int r, int num) {
 }
 
 
-#endif // BINARY_SEARCH_H
+#endif //CEXERCISES_BINARY_SEARCH_H
