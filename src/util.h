@@ -11,5 +11,16 @@ static inline size_t util_strlen(const char* s) {
     return i;
 }
 
+static void util_printIntArray(int arr[], int size) {
+    printf("[");
+    for (int i = 0; i < size; i++) {
+        printf("%d", arr[i]);
+        if (i < size - 1) {
+            printf(", ");
+        }
+    }
+    printf("]\n");
+}
+
 
 #endif //CEXERCISES_UTIL_H

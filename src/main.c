@@ -2,7 +2,9 @@
 #include "./math.h"
 #include "./hexToDec.h"
 #include "./romanNumParser.h"
-
+#include "./util.h"
+#include "./quicksort.h"
+#include "./binarySearch.h"
 
 void testFact() {
     printf("%lu", math_factorial(5));
@@ -76,9 +78,38 @@ void testRomanNumParser() {
     printf("%d", romanNumParser_parse("MMMCMXLI") == 3941);
 }
 
+void testQuicksort() {
+    int arr[] = {10, 7, 8, 9, 1, 5};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    printf("Original array: ");
+    util_printIntArray(arr, size);
+
+    quicksort(arr, 0, size - 1);
+
+    printf("Sorted array: ");
+    util_printIntArray(arr, size);
+}
+
+void testBinarySearch() {
+    int arr[] = {10, 7, 8, 9, 1, 5};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int num = 8;
+
+    printf("Original array: ");
+    util_printIntArray(arr, size);
+
+    // Perform binary search
+    int index = binarySearch(arr, 0, size - 1, num);
+
+    if (index != -1)
+        printf("%d found at index %d.\n", num, index);
+    else
+        printf("%d not found in the array.\n", num);
+}
 
 int main() {
-    testRomanNumParser();
+    testBinarySearch();
 
     return 0;
 }
