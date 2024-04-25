@@ -1,3 +1,7 @@
+#ifndef CEXERCISES_STRING_UTIL_H
+#define CEXERCISES_STRING_UTIL_H
+
+
 #include <stdio.h>
 
 static inline size_t stringUtil_strlen(const char* s) {
@@ -6,3 +10,6 @@ static inline size_t stringUtil_strlen(const char* s) {
     }
     return i;
 }
+
+
+#endif //CEXERCISES_STRING_UTIL_H
