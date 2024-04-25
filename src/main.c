@@ -12,7 +12,7 @@ void testFact() {
 
 void testFib() {
     printf(
-            "[FIB WITHOUT CACHE] 1: %lu | 2: %lu | 3: %lu | 4: %lu | 5: %lu | 6: %lu",
+            "[FIB WITHOUT CACHE] 1: %d | 2: %d | 3: %d | 4: %d | 5: %d | 6: %d",
             math_fibonacci(0) == 0, //1
             math_fibonacci(1) == 1, //2
             math_fibonacci(2) == 1, //3
@@ -30,7 +30,7 @@ void testFibCache() {
     }
 
     printf(
-            "[FIB CACHE] 1: %lu | 2: %lu | 3: %lu | 4: %lu | 5: %lu | 6: %lu",
+            "[FIB CACHE] 1: %d | 2: %d | 3: %d | 4: %d | 5: %d | 6: %d",
             math_fibonacciCache(0, cache) == 0, //1
             math_fibonacciCache(1, cache) == 1, //2
             math_fibonacciCache(2, cache) == 1, //3
