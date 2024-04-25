@@ -9,4 +9,7 @@ add_executable(${PROJECT_NAME} src/main.c
         src/hexToDec.c
         src/strutil.h
         src/romanNumParser.c
-        src/romanNumParser.h)
+        src/romanNumParser.h
+        src/binarySearch.h
+        src/quicksort.h
+)
