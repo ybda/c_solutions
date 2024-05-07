@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <glob.h>
 #include "./math.h"
 #include "./hexToDec.h"
 #include "./romanNumParser.h"
