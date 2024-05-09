@@ -181,6 +181,24 @@ void testRomanNumParser() {
     }
 }
 
+void testMathReverse() {
+    printf("[math_reverse] ");
+
+    struct {
+        int input;
+        int expected;
+    } testCases[] = {
+            {1234, 4321},
+            {-123, -321},
+            {120, 21},
+            {123456, 654321},
+    };
+
+    for (size_t i = 0; i < sizeof(testCases) / sizeof(testCases[0]); i++) {
+        printf("%d", math_reverse(testCases[i].input) == testCases[i].expected);
+    }
+}
+
 void testQuicksort() {
     printf("--[Quicksort]--\n");
 

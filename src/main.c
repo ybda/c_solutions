@@ -12,6 +12,7 @@ void testAll() {
             testHexToDec,
             testMathFactorial,
             testRomanNumParser,
+            testMathReverse,
             testQuicksort,
             testBinarySearch
     };
