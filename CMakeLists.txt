@@ -6,7 +6,7 @@ set(CMAKE_C_STANDARD 23)
 add_executable(${PROJECT_NAME}
         src/binarySearch.h
         src/fibonacciNumber.h
-        src/hexToDec.h
+        src/hexDec.h
         src/main.c
         src/math.h
         src/quicksort.h

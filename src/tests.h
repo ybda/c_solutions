@@ -2,8 +2,9 @@
 #define CEXERCISES_TESTS_H
 
 
+#include <string.h>
 #include "./math.h"
-#include "./hexToDec.h"
+#include "./hexDec.h"
 #include "./romanNumParser.h"
 #include "./util.h"
 #include "./quicksort.h"
@@ -130,7 +131,7 @@ void testMathPower() {
 }
 
 void testHexToDec() {
-    printf("[hexToDec] ");
+    printf("[hexDec_toDec] ");
 
     struct {
         const char* input;
@@ -146,7 +147,30 @@ void testHexToDec() {
     };
 
     for (size_t i = 0; i < sizeof(testCases) / sizeof(testCases[0]); i++) {
-        printf("%d", hexToDec(testCases[i].input) == testCases[i].expected);
+        printf("%d", hexDec_toDec(testCases[i].input) == testCases[i].expected);
+    }
+}
+
+void testDecToHex() {
+    printf("[hexDec_toHex] ");
+
+    struct {
+        const char* input;
+        int expected;
+    } testCases[] = {
+            {"1A3", 419},
+            {"1234", 4660},
+            {"ABC0", 43968},
+            {"2A3F", 10815},
+            {"236E", 9070},
+            {"20F1", 8433},
+            {"29F1", 10737},
+    };
+
+    for (size_t i = 0; i < sizeof(testCases) / sizeof(testCases[0]); i++) {
+        char* s = hexDec_toHex(testCases[i].expected);
+        printf("%d", strcmp(s, testCases[i].input) == 0);
+        free(s);
     }
 }
 

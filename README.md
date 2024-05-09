@@ -8,7 +8,7 @@ Efficient solutions for typical programming problems in C with tests.
 [fibonacciNumber_memoization] 1111111
 [fibonacciNumber_iterativeSolution] 1111111
 [math_power] 111111
-[hexToDec] 1111111
+[hexDec_toDec] 1111111
 [math_factorial] 1111111111111111
 [romanNumParser_parse] 11111111111111111
 --[Quicksort]--

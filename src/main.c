@@ -10,6 +10,7 @@ void testAll() {
             testFibonacciIterative,
             testMathPower,
             testHexToDec,
+            testDecToHex,
             testMathFactorial,
             testRomanNumParser,
             testMathReverse,
