@@ -1,48 +1,23 @@
 #include "./romanNumParser.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include "./util.h"
 
-static unsigned long romanNumParser_romanNumToNum(char n) {
-    switch (n) {
-        case 'I': return 1;
+static int romanNumParser_getValue(const char *s){
+    switch(*s) {
+        case 'I': return (s[1] == 'V' || s[1] == 'X') ? -1 : 1;
+        case 'X': return (s[1] == 'L' || s[1] == 'C') ? -10 : 10;
+        case 'C': return (s[1] == 'D' || s[1] == 'M') ? -100 : 100;
         case 'V': return 5;
-        case 'X': return 10;
         case 'L': return 50;
-        case 'C': return 100;
         case 'D': return 500;
         case 'M': return 1000;
     }
-    perror("romanNumParser_romanNumToNum LETTER UNKNOWN");
-    exit(1);
+    return 0;
 }
 
-unsigned long romanNumParser_parse(const char* romanNum) {
-    const size_t rnSz = util_strlen(romanNum);
-    unsigned long* allNums = (unsigned long*)malloc(rnSz * sizeof(long));
+int romanNumParser_parse(const char *s) {
+    int result = 0;
 
-    for (size_t i = 0; i < rnSz; i++) {
-        allNums[i] = romanNumParser_romanNumToNum(romanNum[i]);
+    for(;*s != '\0'; ++s) {
+        result += romanNumParser_getValue(s);
     }
-
-    bool minus = false;
-    unsigned long res = 0;
-    for (size_t i = 0; i < rnSz; i++) {
-        const size_t lastInd = rnSz - 1 - i;
-
-        if (!minus) {
-            res += allNums[lastInd];
-        } else {
-            res -= allNums[lastInd];
-            minus = false;
-        }
-
-        if (lastInd - 1 >= 0 && allNums[lastInd] > allNums[lastInd-1]) {
-            minus = true;
-        }
-    }
-
-    free(allNums);
-
-    return res;
+    return result;
 }
