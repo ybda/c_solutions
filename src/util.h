@@ -28,5 +28,9 @@ static inline unsigned short util_hexCharToNum(char c) {
     return c > 64 ? c - 55 : c - 48;
 }
 
+static inline bool util_isDigit(char ch){
+    return ch >= '0' && ch <= '9';
+}
+
 
 #endif //CEXERCISES_UTIL_H

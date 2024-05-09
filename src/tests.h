@@ -42,6 +42,26 @@ void testMathFactorial() {
     }
 }
 
+void testMathAtoi() {
+    printf("[math_atoi] ");
+
+    struct {
+        const char *input;
+        int expected;
+    } testCases[] = {
+            {"  325  ",  325},
+            {"42",  42},
+            {"-042",  -42},
+            {"1337c0d3",  1337},
+            {"0-1",  0},
+            {"words and 987",  0}
+    };
+
+    for (size_t i = 0; i < sizeof(testCases) / sizeof(testCases[0]); i++) {
+        printf("%d", math_atoi(testCases[i].input) == testCases[i].expected);
+    }
+}
+
 void testFibonacci() {
     printf("[fibonacciNumber_memoization & fibonacciNumber_iterativeSolution & fibonacciNumber_recursion] ");
 

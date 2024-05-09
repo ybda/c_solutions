@@ -7,6 +7,7 @@ void testAll() {
     function_ptr functions[] = {
             testFibonacci,
             testMathPower,
+            testMathAtoi,
             testHexDec,
             testMathFactorial,
             testRomanNumParser,

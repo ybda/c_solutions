@@ -5,6 +5,7 @@
 #include <math.h>
 #include <limits.h>
 #include <stdint.h>
+#include "./util.h"
 
 // 5! = 1 * 2 * 3 * 4 * 5 = 120
 static unsigned long math_factorialRecursion(unsigned int n) {
@@ -56,6 +57,47 @@ static int32_t math_reverse(int x) {
 
     }
     return ans;
+}
+
+int math_atoi(const char* s) {
+    size_t len = util_strlen(s);
+
+    if (len == 0){
+        return 0;
+    }
+
+    int index = 0;
+    while(index < len && s[index] == ' '){
+        ++index;
+    }
+
+    if(index == len){
+        return 0;
+    }
+
+    char ch;
+    bool isNegative = (ch = s[index]) == '-';
+
+    if(isNegative || ch == '+'){
+        ++index;
+    }
+
+    const int maxLimit = INT_MAX / 10;
+    int result = 0;
+    while(index < len && util_isDigit(ch = s[index])){
+
+        int digit = ch - '0';
+
+        if(result > maxLimit || (result == maxLimit && digit > 7)){
+            return isNegative ? INT_MIN : INT_MAX;
+        }
+
+        result = (result * 10) + digit;
+
+        ++index;
+    }
+
+    return isNegative ? -result : result;
 }
 
 
