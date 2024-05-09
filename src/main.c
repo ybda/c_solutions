@@ -5,15 +5,15 @@
 
 void testAll() {
     function_ptr functions[] = {
-            testFibonacci,
-            testMathPower,
-            testMathAtoi,
-            testHexDec,
-            testMathFactorial,
-            testRomanNumParser,
-            testMathReverse,
-            testQuicksort,
-            testBinarySearch
+            tests_fibonacci,
+            tests_mathPower,
+            tests_mathAtoi,
+            tests_hexDec,
+            tests_mathFactorial,
+            tests_romanNumParser,
+            tests_mathReverse,
+            tests_quicksort,
+            tests_binarySearch
     };
 
     for (int i = 0; i < (sizeof(functions) / sizeof(functions[0])); i++) {

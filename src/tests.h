@@ -11,7 +11,7 @@
 #include "./binarySearch.h"
 #include "./fibonacciNumber.h"
 
-void testMathFactorial() {
+void tests_mathFactorial() {
     printf("[math_factorialRecursion & math_factorialNoRecursion] ");
 
     struct {
@@ -42,7 +42,7 @@ void testMathFactorial() {
     }
 }
 
-void testMathAtoi() {
+void tests_mathAtoi() {
     printf("[math_atoi] ");
 
     struct {
@@ -62,7 +62,7 @@ void testMathAtoi() {
     }
 }
 
-void testFibonacci() {
+void tests_fibonacci() {
     printf("[fibonacciNumber_memoization & fibonacciNumber_iterativeSolution & fibonacciNumber_recursion] ");
 
     size_t cacheSz = 150;
@@ -97,7 +97,7 @@ void testFibonacci() {
     }
 }
 
-void testMathPower() {
+void tests_mathPower() {
     printf("[math_power] ");
 
     struct {
@@ -118,7 +118,7 @@ void testMathPower() {
     }
 }
 
-void testHexDec() {
+void tests_hexDec() {
     printf("[hexDec_toDec & hexDec_toHex] ");
 
     struct {
@@ -143,7 +143,7 @@ void testHexDec() {
     }
 }
 
-void testRomanNumParser() {
+void tests_romanNumParser() {
     printf("[romanNumParser_parse] ");
 
     struct {
@@ -174,7 +174,7 @@ void testRomanNumParser() {
     }
 }
 
-void testMathReverse() {
+void tests_mathReverse() {
     printf("[math_reverse] ");
 
     struct {
@@ -214,7 +214,7 @@ void testMathReverse() {
     }
 }
 
-void testQuicksort() {
+void tests_quicksort() {
     printf("--[Quicksort]--\n");
 
     int arr[] = {10, 7, 8, 9, 1, 5};
@@ -230,7 +230,7 @@ void testQuicksort() {
     util_printIntArray(arr, size);
 }
 
-void testBinarySearch() {
+void tests_binarySearch() {
     printf("--[BinarySearch]--\n");
 
     int arr[] = {10, 7, 8, 9, 1, 5};
