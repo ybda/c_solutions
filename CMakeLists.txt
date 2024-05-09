@@ -1,15 +1,17 @@
 cmake_minimum_required(VERSION 3.26)
 project(cexercises C)
 
-set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD 23)
 
-add_executable(${PROJECT_NAME} src/main.c
-        src/math.h
-        src/hexToDec.h
+add_executable(${PROJECT_NAME}
+        src/binarySearch.h
+        src/fibonacciNumber.h
         src/hexToDec.c
-        src/util.h
+        src/hexToDec.h
+        src/main.c
+        src/math.h
+        src/quicksort.h
         src/romanNumParser.c
         src/romanNumParser.h
-        src/binarySearch.h
-        src/quicksort.h
+        src/util.h
 )

@@ -1,7 +1,6 @@
 #include "./romanNumParser.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
 #include "./util.h"
 
 static unsigned long romanNumParser_romanNumToNum(char n) {
