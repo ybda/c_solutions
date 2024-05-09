@@ -4,6 +4,8 @@
 
 #include <stdio.h>
 
+typedef void (*function_ptr)();
+
 static inline size_t util_strlen(const char* s) {
     size_t i = 0;
     for (; s[i] != '\0'; i++) {
@@ -19,7 +21,7 @@ static void util_printIntArray(int arr[], int size) {
             printf(", ");
         }
     }
-    printf("]\n");
+    printf("]");
 }
 
 

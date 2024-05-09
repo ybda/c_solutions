@@ -177,13 +177,14 @@ void testRomanNumParser() {
 }
 
 void testQuicksort() {
-    printf("[Quicksort]\n");
+    printf("--[Quicksort]--\n");
 
     int arr[] = {10, 7, 8, 9, 1, 5};
     int size = sizeof(arr) / sizeof(arr[0]);
 
     printf("Original array: ");
     util_printIntArray(arr, size);
+    putchar('\n');
 
     quicksort(arr, 0, size - 1);
 
@@ -192,7 +193,7 @@ void testQuicksort() {
 }
 
 void testBinarySearch() {
-    printf("[BinarySearch]\n");
+    printf("--[BinarySearch]--\n");
 
     int arr[] = {10, 7, 8, 9, 1, 5};
     int size = sizeof(arr) / sizeof(arr[0]);
@@ -200,14 +201,15 @@ void testBinarySearch() {
 
     printf("Original array: ");
     util_printIntArray(arr, size);
+    putchar('\n');
 
     // Perform binary search
     int index = binarySearch(arr, 0, size - 1, num);
 
     if (index != -1)
-        printf("%d found at index %d.\n", num, index);
+        printf("%d found at index %d.", num, index);
     else
-        printf("%d not found in the array.\n", num);
+        printf("%d not found in the array.", num);
 }
 
 

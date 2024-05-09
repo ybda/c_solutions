@@ -1,29 +1,25 @@
 #include <stdio.h>
 #include "./tests.h"
 
+// Define a function type
 
 void testAll() {
-    testFibobacciRecursion();
-    putchar('\n');
-    testFibonacciMemoization();
-    putchar('\n');
-    testFibonacciIterative();
-    putchar('\n');
-    testMathPower();
-    putchar('\n');
-    testHexToDec();
-    putchar('\n');
-    testMathFactorial();
-    putchar('\n');
-    testRomanNumParser();
+    function_ptr functions[] = {
+            testFibobacciRecursion,
+            testFibonacciMemoization,
+            testFibonacciIterative,
+            testMathPower,
+            testHexToDec,
+            testMathFactorial,
+            testRomanNumParser,
+            testQuicksort,
+            testBinarySearch
+    };
 
-    printf("\n\n\n");
-
-    // multiline tests
-
-    testQuicksort();
-    putchar('\n');
-    testBinarySearch();
+    for (int i = 0; i < (sizeof(functions) / sizeof(function_ptr)); i++) {
+        functions[i]();
+        putchar('\n');
+    }
 }
 
 int main() {
