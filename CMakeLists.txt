@@ -4,6 +4,7 @@ project(cexercises C)
 set(CMAKE_C_STANDARD 23)
 
 add_executable(${PROJECT_NAME}
+        src/binarySearch.c
         src/binarySearch.h
         src/fibonacciNumber.h
         src/hexDec.h

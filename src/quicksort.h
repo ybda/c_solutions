@@ -2,7 +2,7 @@
 #define CEXERCISES_QUICKSORT_H
 
 
-void quicksort(int *target, int left, int right) {
+static void quicksort(int *target, int left, int right) {
     if(left >= right) return;
     int i = left, j = right;
     int tmp, pivot = target[i];

@@ -42,28 +42,8 @@ void testMathFactorial() {
     }
 }
 
-void testFibobacciRecursion() {
-    printf("[fibonacciNumber_recursion] ");
-
-    struct {
-        int input;
-        unsigned long expected;
-    } testCases[] = {
-            {0,  0},
-            {1,  1},
-            {2,  1},
-            {3,  2},
-            {12, 144},
-            {40, 102334155}
-    };
-
-    for (int i = 0; i < sizeof(testCases) / sizeof(testCases[0]); i++) {
-        printf("%d", fibonacciNumber_recursion(testCases[i].input) == testCases[i].expected);
-    }
-}
-
-void testFibonacciMemoization() {
-    printf("[fibonacciNumber_memoization & fibonacciNumber_iterativeSolution] ");
+void testFibonacci() {
+    printf("[fibonacciNumber_memoization & fibonacciNumber_iterativeSolution & fibonacciNumber_recursion] ");
 
     size_t cacheSz = 150;
     unsigned long cache[cacheSz];
@@ -87,6 +67,13 @@ void testFibonacciMemoization() {
     for (int i = 0; i < sizeof(testCases) / sizeof(testCases[0]); i++) {
         printf("%d", fibonacciNumber_memoization(testCases[i].input, cache) == testCases[i].expected);
         printf("%d", fibonacciNumber_iterativeSolution(testCases[i].input) == testCases[i].expected);
+
+        // Condition is required to not wait forever
+        if (testCases[i].input < 41) {
+            printf("%d", fibonacciNumber_recursion(testCases[i].input) == testCases[i].expected);
+        }
+
+        putchar(' ');
     }
 }
 
@@ -111,8 +98,8 @@ void testMathPower() {
     }
 }
 
-void testHexToDec() {
-    printf("[hexDec_toDec] ");
+void testHexDec() {
+    printf("[hexDec_toDec & hexDec_toHex] ");
 
     struct {
         const char *input;
@@ -129,26 +116,7 @@ void testHexToDec() {
 
     for (size_t i = 0; i < sizeof(testCases) / sizeof(testCases[0]); i++) {
         printf("%d", hexDec_toDec(testCases[i].input) == testCases[i].expected);
-    }
-}
 
-void testDecToHex() {
-    printf("[hexDec_toHex] ");
-
-    struct {
-        const char *input;
-        int expected;
-    } testCases[] = {
-            {"1A3",  419},
-            {"1234", 4660},
-            {"ABC0", 43968},
-            {"2A3F", 10815},
-            {"236E", 9070},
-            {"20F1", 8433},
-            {"29F1", 10737},
-    };
-
-    for (size_t i = 0; i < sizeof(testCases) / sizeof(testCases[0]); i++) {
         char *s = hexDec_toHex(testCases[i].expected);
         printf("%d", strcmp(s, testCases[i].input) == 0);
         free(s);

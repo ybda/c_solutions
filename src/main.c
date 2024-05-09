@@ -5,11 +5,9 @@
 
 void testAll() {
     function_ptr functions[] = {
-            testFibobacciRecursion,
-            testFibonacciMemoization,
+            testFibonacci,
             testMathPower,
-            testHexToDec,
-            testDecToHex,
+            testHexDec,
             testMathFactorial,
             testRomanNumParser,
             testMathReverse,
