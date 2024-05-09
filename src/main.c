@@ -16,7 +16,7 @@ void testAll() {
             testBinarySearch
     };
 
-    for (int i = 0; i < (sizeof(functions) / sizeof(function_ptr)); i++) {
+    for (int i = 0; i < (sizeof(functions) / sizeof(functions[0])); i++) {
         functions[i]();
         putchar('\n');
     }
