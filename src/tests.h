@@ -11,6 +11,8 @@
 #include "./fibonacciNumber.h"
 
 void testMathFactorial() {
+    printf("[math_factorial] ");
+
     struct {
         int input;
         long expected;
@@ -33,13 +35,14 @@ void testMathFactorial() {
             {15, 1307674368000},
     };
 
-    printf("[math_factorial] ");
     for (int i = 0; i < sizeof(testCases) / sizeof(testCases[0]); i++) {
         printf("%d", math_factorial(testCases[i].input) == testCases[i].expected);
     }
 }
 
 void testFibobacciRecursion() {
+    printf("[fibonacciNumber_recursion] ");
+
     struct {
         int input;
         unsigned long expected;
@@ -52,13 +55,14 @@ void testFibobacciRecursion() {
             {40, 102334155}
     };
 
-    printf("[fibonacciNumber_recursion] ");
     for (int i = 0; i < sizeof(testCases) / sizeof(testCases[0]); i++) {
         printf("%d", fibonacciNumber_recursion(testCases[i].input) == testCases[i].expected);
     }
 }
 
 void testFibonacciMemoization() {
+    printf("[fibonacciNumber_memoization] ");
+
     size_t cacheSz = 150;
     unsigned long cache[cacheSz];
     for (size_t i = 0; i < cacheSz; i++) {
@@ -78,13 +82,14 @@ void testFibonacciMemoization() {
             {61, 2504730781961}
     };
 
-    printf("[fibonacciNumber_memoization] ");
     for (int i = 0; i < sizeof(testCases) / sizeof(testCases[0]); i++) {
         printf("%d", fibonacciNumber_memoization(testCases[i].input, cache) == testCases[i].expected);
     }
 }
 
 void testFibonacciIterative() {
+    printf("[fibonacciNumber_iterativeSolution] ");
+
     struct {
         int input;
         unsigned long expected;
@@ -98,13 +103,14 @@ void testFibonacciIterative() {
             {61, 2504730781961}
     };
 
-    printf("[fibonacciNumber_iterativeSolution] ");
     for (int i = 0; i < sizeof(testCases) / sizeof(testCases[0]); i++) {
         printf("%d", fibonacciNumber_iterativeSolution(testCases[i].input) == testCases[i].expected);
     }
 }
 
 void testMathPower() {
+    printf("[math_power] ");
+
     struct {
         int base;
         int exponent;
@@ -118,7 +124,6 @@ void testMathPower() {
             {3, 4, 81}
     };
 
-    printf("[math_power] ");
     for (int i = 0; i < sizeof(testCases) / sizeof(testCases[0]); i++) {
         printf("%d", math_power(testCases[i].base, testCases[i].exponent) == testCases[i].expected);
     }
