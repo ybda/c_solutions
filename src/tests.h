@@ -12,7 +12,7 @@
 #include "./fibonacciNumber.h"
 
 void testMathFactorial() {
-    printf("[math_factorial] ");
+    printf("[math_factorialRecursion & math_factorialNoRecursion] ");
 
     struct {
         int input;
@@ -37,7 +37,8 @@ void testMathFactorial() {
     };
 
     for (int i = 0; i < sizeof(testCases) / sizeof(testCases[0]); i++) {
-        printf("%d", math_factorial(testCases[i].input) == testCases[i].expected);
+        printf("%d", math_factorialRecursion(testCases[i].input) == testCases[i].expected);
+        printf("%d", math_factorialNoRecursion(testCases[i].input) == testCases[i].expected);
     }
 }
 
@@ -62,7 +63,7 @@ void testFibobacciRecursion() {
 }
 
 void testFibonacciMemoization() {
-    printf("[fibonacciNumber_memoization] ");
+    printf("[fibonacciNumber_memoization & fibonacciNumber_iterativeSolution] ");
 
     size_t cacheSz = 150;
     unsigned long cache[cacheSz];
@@ -85,26 +86,6 @@ void testFibonacciMemoization() {
 
     for (int i = 0; i < sizeof(testCases) / sizeof(testCases[0]); i++) {
         printf("%d", fibonacciNumber_memoization(testCases[i].input, cache) == testCases[i].expected);
-    }
-}
-
-void testFibonacciIterative() {
-    printf("[fibonacciNumber_iterativeSolution] ");
-
-    struct {
-        int input;
-        unsigned long expected;
-    } testCases[] = {
-            {0, 0},
-            {1, 1},
-            {2, 1},
-            {3, 2},
-            {12, 144},
-            {40, 102334155},
-            {61, 2504730781961}
-    };
-
-    for (int i = 0; i < sizeof(testCases) / sizeof(testCases[0]); i++) {
         printf("%d", fibonacciNumber_iterativeSolution(testCases[i].input) == testCases[i].expected);
     }
 }

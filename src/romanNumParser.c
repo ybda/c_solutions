@@ -16,8 +16,9 @@ static int romanNumParser_getValue(const char *s){
 int romanNumParser_parse(const char *s) {
     int result = 0;
 
-    for(;*s != '\0'; ++s) {
+    for(; *s != '\0'; s++) {
         result += romanNumParser_getValue(s);
     }
+
     return result;
 }

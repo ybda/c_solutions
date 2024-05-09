@@ -7,11 +7,19 @@
 #include <stdint.h>
 
 // 5! = 1 * 2 * 3 * 4 * 5 = 120
-static unsigned long math_factorial(unsigned int n) {
+static unsigned long math_factorialRecursion(unsigned int n) {
     if (n <= 1) {
         return 1;
     }
-    return n * math_factorial(n - 1);
+    return n * math_factorialRecursion(n - 1);
+}
+
+static unsigned long math_factorialNoRecursion(unsigned int n) {
+    unsigned long fact = 1;
+    for(int i = 1; i <= n; i++) {
+        fact = fact * i;
+    }
+    return fact;
 }
 
 static unsigned long math_power(unsigned long n, unsigned int power) {

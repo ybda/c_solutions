@@ -7,7 +7,6 @@ void testAll() {
     function_ptr functions[] = {
             testFibobacciRecursion,
             testFibonacciMemoization,
-            testFibonacciIterative,
             testMathPower,
             testHexToDec,
             testDecToHex,
