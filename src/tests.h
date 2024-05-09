@@ -18,16 +18,16 @@ void testMathFactorial() {
         int input;
         long expected;
     } testCases[] = {
-            {0, 1},
-            {1, 1},
-            {2, 2},
-            {3, 6},
-            {4, 24},
-            {5, 120},
-            {6, 720},
-            {7, 5040},
-            {8, 40320},
-            {9, 362880},
+            {0,  1},
+            {1,  1},
+            {2,  2},
+            {3,  6},
+            {4,  24},
+            {5,  120},
+            {6,  720},
+            {7,  5040},
+            {8,  40320},
+            {9,  362880},
             {10, 3628800},
             {11, 39916800},
             {12, 479001600},
@@ -49,10 +49,10 @@ void testFibobacciRecursion() {
         int input;
         unsigned long expected;
     } testCases[] = {
-            {0, 0},
-            {1, 1},
-            {2, 1},
-            {3, 2},
+            {0,  0},
+            {1,  1},
+            {2,  1},
+            {3,  2},
             {12, 144},
             {40, 102334155}
     };
@@ -75,10 +75,10 @@ void testFibonacciMemoization() {
         int input;
         unsigned long expected;
     } testCases[] = {
-            {0, 0},
-            {1, 1},
-            {2, 1},
-            {3, 2},
+            {0,  0},
+            {1,  1},
+            {2,  1},
+            {3,  2},
             {12, 144},
             {40, 102334155},
             {61, 2504730781961}
@@ -98,12 +98,12 @@ void testMathPower() {
         int exponent;
         int expected;
     } testCases[] = {
-            {2, 3, 8},
+            {2,   3, 8},
             {100, 1, 100},
             {100, 0, 1},
-            {2, 2, 4},
-            {2, 4, 16},
-            {3, 4, 81}
+            {2,   2, 4},
+            {2,   4, 16},
+            {3,   4, 81}
     };
 
     for (int i = 0; i < sizeof(testCases) / sizeof(testCases[0]); i++) {
@@ -115,10 +115,10 @@ void testHexToDec() {
     printf("[hexDec_toDec] ");
 
     struct {
-        const char* input;
+        const char *input;
         int expected;
     } testCases[] = {
-            {"1A3", 419},
+            {"1A3",  419},
             {"1234", 4660},
             {"ABC0", 43968},
             {"2A3F", 10815},
@@ -136,10 +136,10 @@ void testDecToHex() {
     printf("[hexDec_toHex] ");
 
     struct {
-        const char* input;
+        const char *input;
         int expected;
     } testCases[] = {
-            {"1A3", 419},
+            {"1A3",  419},
             {"1234", 4660},
             {"ABC0", 43968},
             {"2A3F", 10815},
@@ -149,7 +149,7 @@ void testDecToHex() {
     };
 
     for (size_t i = 0; i < sizeof(testCases) / sizeof(testCases[0]); i++) {
-        char* s = hexDec_toHex(testCases[i].expected);
+        char *s = hexDec_toHex(testCases[i].expected);
         printf("%d", strcmp(s, testCases[i].input) == 0);
         free(s);
     }
@@ -159,25 +159,25 @@ void testRomanNumParser() {
     printf("[romanNumParser_parse] ");
 
     struct {
-        const char* input;
+        const char *input;
         int expected;
     } testCases[] = {
-            {"I", 1},
-            {"III", 3},
-            {"IV", 4},
-            {"V", 5},
-            {"VI", 6},
-            {"VII", 7},
-            {"VIV", 9},
-            {"XXXI", 31},
-            {"XXXVII", 37},
-            {"LXXI", 71},
-            {"LXXXIV", 84},
-            {"LXXXV", 85},
-            {"LXXXVI", 86},
-            {"XCIX", 99},
-            {"C", 100},
-            {"CCX", 210},
+            {"I",        1},
+            {"III",      3},
+            {"IV",       4},
+            {"V",        5},
+            {"VI",       6},
+            {"VII",      7},
+            {"VIV",      9},
+            {"XXXI",     31},
+            {"XXXVII",   37},
+            {"LXXI",     71},
+            {"LXXXIV",   84},
+            {"LXXXV",    85},
+            {"LXXXVI",   86},
+            {"XCIX",     99},
+            {"C",        100},
+            {"CCX",      210},
             {"MMMCMXLI", 3941}
     };
 
@@ -193,10 +193,32 @@ void testMathReverse() {
         int input;
         int expected;
     } testCases[] = {
-            {1234, 4321},
-            {-123, -321},
-            {120, 21},
-            {123456, 654321},
+            {1234,     4321},
+            {-123,     -321},
+            {120,      21},
+            {123456,   654321},
+            {789012,   210987},
+            {890123,   321098},
+            {901234,   432109},
+            {1234567,  7654321},
+            {2345678,  8765432},
+            {3456789,  9876543},
+            {4567890,  987654},
+            {5678901,  1098765},
+            {6789012,  2109876},
+            {-7890123,  -3210987},
+            {8901234,  4321098},
+            {9012345,  5432109},
+            {12345678, 87654321},
+            {23456789, 98765432},
+            {34567890, 9876543},
+            {45678901, 10987654},
+            {56789012, 21098765},
+            {67890123, 32109876},
+            {78901234, 43210987},
+            {89012345, 54321098},
+            {901234536, 635432109},
+            {-901234536, -635432109}
     };
 
     for (size_t i = 0; i < sizeof(testCases) / sizeof(testCases[0]); i++) {
