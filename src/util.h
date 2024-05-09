@@ -24,5 +24,9 @@ static void util_printIntArray(int arr[], int size) {
     printf("]");
 }
 
+static inline unsigned short util_hexCharToNum(char c) {
+    return c > 64 ? c - 55 : c - 48;
+}
+
 
 #endif //CEXERCISES_UTIL_H
