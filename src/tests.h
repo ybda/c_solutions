@@ -62,6 +62,30 @@ void tests_mathAtoi() {
     }
 }
 
+void tests_mathIsPalindrome() {
+    printf("[math_isPalindrome] ");
+
+    struct {
+        int input;
+        int expected;
+    } testCases[] = {
+            {121,  1},
+            {2112,  1},
+            {1001,  1},
+            {66,  1},
+            {0,  1},
+
+            {-121,  0},
+            {10,  0},
+            {1010,  0},
+            {787887,  0},
+    };
+
+    for (size_t i = 0; i < sizeof(testCases) / sizeof(testCases[0]); i++) {
+        printf("%d", math_isPalindrome(testCases[i].input) == testCases[i].expected);
+    }
+}
+
 void tests_fibonacci() {
     printf("[fibonacciNumber_memoization & fibonacciNumber_iterativeSolution & fibonacciNumber_recursion] ");
 

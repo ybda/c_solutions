@@ -8,6 +8,7 @@ void testAll() {
             tests_fibonacci,
             tests_mathPower,
             tests_mathAtoi,
+            tests_mathIsPalindrome,
             tests_hexDec,
             tests_mathFactorial,
             tests_romanNumParser,
