@@ -50,12 +50,7 @@ static int math_reverseWithoutOverflowHandling(int x) {
 
 static bool math_isPalindrome(const int x) {
     if (x < 0) return false;
-    int reversed = 0, origin = x;
-    do {
-        reversed = reversed * 10 + origin % 10;
-        origin /= 10;
-    } while(origin != 0);
-    return reversed == x;
+    return math_reverseWithoutOverflowHandling(x) == x;
 }
 
 static int32_t math_reverseWithOverflowHandling(int x) {
