@@ -39,7 +39,16 @@ static unsigned long math_power(unsigned long n, unsigned int power) {
     return res;
 }
 
-static int32_t math_reverse(int x) {
+static int math_reverseWithoutOverflowHandling(int x) {
+    int reversed = 0;
+    do {
+        reversed = reversed * 10 + x % 10;
+        x /= 10;
+    } while(x != 0);
+    return reversed;
+}
+
+static int32_t math_reverseWithOverflowHandling(int x) {
     int32_t upperLimit = (pow(2, 31) - 1) / 10;
     int32_t lowerLimit = -(pow(2, 31) / 10);
 

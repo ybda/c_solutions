@@ -10,7 +10,7 @@ Efficient solutions for typical programming problems in C with tests.
 [hexDec_toDec & hexDec_toHex] 11111111111111
 [math_factorialRecursion & math_factorialNoRecursion] 11111111111111111111111111111111
 [romanNumParser_parse] 11111111111111111
-[math_reverse] 11111111111111111111111111
+[math_reverseWithOverflowHandling] 11111111111111111111111111
 --[Quicksort]--
 Original array: [10, 7, 8, 9, 1, 5]
 Sorted array: [1, 5, 7, 8, 9, 10]

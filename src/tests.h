@@ -175,7 +175,7 @@ void tests_romanNumParser() {
 }
 
 void tests_mathReverse() {
-    printf("[math_reverse] ");
+    printf("[math_reverseWithOverflowHandling] ");
 
     struct {
         int input;
@@ -210,7 +210,7 @@ void tests_mathReverse() {
     };
 
     for (size_t i = 0; i < sizeof(testCases) / sizeof(testCases[0]); i++) {
-        printf("%d", math_reverse(testCases[i].input) == testCases[i].expected);
+        printf("%d", math_reverseWithOverflowHandling(testCases[i].input) == testCases[i].expected);
     }
 }
 
